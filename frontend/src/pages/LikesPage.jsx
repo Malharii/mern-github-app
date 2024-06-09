@@ -66,7 +66,11 @@ const LikesPage = () => {
                     </div>
                   </div>
                 </th>
-                <td className="px-6 py-4">{formatDate(user.likedDate)}</td>
+                <td className="px-6 py-4">
+                  {/* {
+                formatDate(user.likedDate)} */}
+                </td>
+
                 <td className="px-6 py-4">
                   <div className="flex items-center">
                     <FaHeart size={22} className="text-red-500 mx-2" />
