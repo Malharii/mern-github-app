@@ -12,19 +12,12 @@ const ExplorePage = () => {
     setLoading(true);
     setRepos([]);
     try {
-      // 5000 req per hour for athentication request
       const res = await fetch(
-        `https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`,
-        {
-          headers: {
-            Authorization: `token ${import.meta.env.VITE_GITHUB_API_KEY}`,
-          },
-        }
+        `http://localhost:5000/api/explore/repos/${language}`
       );
-      const repos = await res.json();
-      setRepos(repos.items);
+      const { repos } = await res.json();
+      setRepos(repos);
       setSelectedLanguage(language);
-      setLoading(false);
     } catch (error) {
       toast.error(error.message);
     } finally {
