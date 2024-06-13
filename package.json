@@ -6,7 +6,6 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon backend/server.js"
-
   },
   "keywords": [],
   "author": "",
@@ -15,7 +14,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.4.1"
+    "express-session": "^1.18.0",
+    "mongoose": "^8.4.1",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12"
   },
   "devDependencies": {
     "nodemon": "^3.1.3"
