@@ -18,9 +18,7 @@ const HomePage = () => {
     setLoading(true);
     setRepos([]);
     try {
-      const res = await fetch(
-        `http://localhost:5000/api/users/profile/${username}`
-      );
+      const res = await fetch(`/api/users/profile/${username}`);
       const { userProfile, repos } = await res.json();
       repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); //descending, recent first
       setRepos(repos);
